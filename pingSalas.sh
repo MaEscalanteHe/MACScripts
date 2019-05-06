@@ -5,7 +5,7 @@ GREEN='\033[0;32m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 bold='\033[1m'
-FILE=~/ScriptPing.txt
+FILE=~/scriptPing.log
 
 while :
 do
@@ -25,7 +25,7 @@ then
 	echo -e "${BLUE}Maquina\t\tDireccion IP\t\tConexion" >> ${FILE}
 	for ip in {2..26}
 		do
-		if ping -c 1 159.90.9.$ip > /dev/null
+		if ping -w 3 -c 1 159.90.9.$ip > /dev/null
 		then
 			echo -e "${NC}${bold}a$(expr $ip - 1)${NC}\t\t159.90.9.$ip\t\t${GREEN}Exitosa${NC}"  >> ${FILE}
 		else
@@ -41,7 +41,7 @@ then
 	echo -e "${BLUE}Maquina\t\tDireccion IP\t\tConexion" >> ${FILE}
 	for ip in {27..51}
 		do
-		if ping -c 1 159.90.9.$ip > /dev/null
+		if ping -w 3 -c 1 159.90.9.$ip > /dev/null
 		then
 			echo -e "${NC}${bold}e$(expr $ip - 26)${NC}\t\t159.90.9.$ip\t\t${GREEN}Exitosa${NC}"  >> ${FILE}
 		else
@@ -57,7 +57,7 @@ then
 	echo -e "${BLUE}Maquina\t\tDireccion IP\t\tConexion" >> ${FILE}
 	for ip in {52..76}
 		do
-		if ping -c 1 159.90.9.$ip > /dev/null
+		if ping -w 3 -c 1 159.90.9.$ip > /dev/null
 		then
 			echo -e "${NC}${bold}f$(expr $ip - 51)${NC}\t\t159.90.9.$ip\t\t${GREEN}Exitosa${NC}"  >> ${FILE}
 		else
@@ -73,7 +73,7 @@ then
 	echo -e "${BLUE}Maquina\t\tDireccion IP\t\tConexion" >> ${FILE}
 	for ip in {167..197}
 		do
-		if ping -c 1 159.90.9.$ip > /dev/null
+		if ping -w 3 -c 1 159.90.9.$ip > /dev/null
 		then
 			echo -e "${NC}${bold}lamec$(expr $ip - 166)${NC}\t\t159.90.9.$ip\t\t${GREEN}Exitosa${NC}"  >> ${FILE}
 		else
